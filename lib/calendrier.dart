@@ -42,11 +42,14 @@ class Calendar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Column(
+    return Column(
       children: [
         Row(children: const [
-          DayButton(position: [0, 5, 10, 0], date: "27/01"),
+          DayButton(
+            position: [0, 5, 10, 0],
+            date: "27/01",
+            isSelected: true,
+          ),
           DayButton(
             position: [0, 30, 0, 0],
           ),
@@ -86,7 +89,7 @@ class Calendar extends StatelessWidget {
           ),
         ]),
       ],
-    ));
+    );
   }
 }
 
@@ -109,11 +112,13 @@ class Details extends StatelessWidget {
 class DayButton extends StatelessWidget {
   final List<double> position;
   final String date;
+  final bool isSelected;
 
   const DayButton(
       {Key? key,
       this.position = const <double>[0, 0, 0, 0],
-      this.date = "27/01"})
+      this.date = "27/01",
+      this.isSelected = false})
       : super(key: key);
 
   @override
@@ -123,20 +128,24 @@ class DayButton extends StatelessWidget {
           onPressed: () {},
           // Add image & text
           child: Padding(
-            padding: EdgeInsets.fromLTRB(
-              position[0],
-              position[1],
-              position[2],
-              position[3],
-            ),
+            padding: EdgeInsets.fromLTRB(0, 0, 0, 0
+                // position[0],
+                // position[1],
+                // position[2],
+                // position[3],
+                ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset("images/penta.png"),
+                isSelected
+                    ? Image.asset("images/date-icon.png")
+                    : Image.asset("images/penta.png"),
                 Text(
                   date,
                   style: const TextStyle(
-                      fontSize: 14, fontWeight: FontWeight.bold),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
                 ),
               ],
             ),
