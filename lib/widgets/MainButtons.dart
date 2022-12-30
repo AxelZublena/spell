@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spell/calendrier.dart';
+import 'package:spell/wel.dart';
 import './MainButton.dart';
 
 class DefisButton extends StatelessWidget {
@@ -26,7 +27,10 @@ class WELButton extends StatelessWidget {
     return MainButton(
         text: "WEL",
         infoDesc:
-            'Viens profiter du WEL !\n\nCommande les délice du sorcier-chef ');
+            'Viens profiter du WEL !\n\nCommande les délice du sorcier-chef ',
+        next: const WELRoute(
+          initIndex: 1,
+        ));
   }
 }
 

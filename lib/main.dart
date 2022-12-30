@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:spell/calendrier.dart';
 import 'package:spell/quesako.dart';
+import 'package:spell/wel.dart';
 import './widgets/MainButton.dart';
 import './widgets/SecondaryButton.dart';
 import './widgets/MainButtons.dart';
@@ -96,10 +97,9 @@ class SecondSecondaryRow extends StatelessWidget {
     return Row(
       children: const <Widget>[
         Expanded(
-          child: SecondaryButton(
-            text: "HEBDO",
-          ),
-        ),
+            child: SecondaryButton(
+          text: "HEBDO",
+        )),
         SizedBox(
           width: 20,
         ),
@@ -125,6 +125,9 @@ class FirstSecondaryRow extends StatelessWidget {
         Expanded(
           child: SecondaryButton(
             text: "PLATS",
+            next: const WELRoute(
+              initIndex: 0,
+            ),
           ),
         ),
         SizedBox(
@@ -133,6 +136,9 @@ class FirstSecondaryRow extends StatelessWidget {
         Expanded(
           child: SecondaryButton(
             text: "DESSERTS",
+            next: const WELRoute(
+              initIndex: 1,
+            ),
           ),
         ),
         SizedBox(
@@ -141,6 +147,9 @@ class FirstSecondaryRow extends StatelessWidget {
         Expanded(
           child: SecondaryButton(
             text: "AUTRES",
+            next: const WELRoute(
+              initIndex: 2,
+            ),
           ),
         ),
       ],

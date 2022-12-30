@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
+import '../quesako.dart';
+
 class SecondaryButton extends StatelessWidget {
   final String text;
   final double size;
+  final StatelessWidget next;
 
   const SecondaryButton({
     Key? key,
     this.text = "",
     this.size = 20,
+    this.next = const QuesakoRoute(),
   }) : super(key: key);
 
   @override
@@ -22,7 +26,12 @@ class SecondaryButton extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10)),
               side: const BorderSide(width: 1.0, color: Colors.black),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => next),
+              );
+            },
             child: Row(
               children: [
                 Expanded(

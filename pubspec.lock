@@ -127,7 +127,7 @@ packages:
       name: image
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.2.2"
+    version: "3.3.0"
   js:
     dependency: transitive
     description:
@@ -198,6 +198,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.6.2"
+  rounded_expansion_tile:
+    dependency: "direct main"
+    description:
+      name: rounded_expansion_tile
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.13"
   sky_engine:
     dependency: transitive
     description: flutter
