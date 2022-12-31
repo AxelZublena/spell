@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rounded_expansion_tile/rounded_expansion_tile.dart';
+import 'package:spell/commander.dart';
 
 class WELRoute extends StatelessWidget {
   final int initIndex;
@@ -19,13 +20,13 @@ class WELRoute extends StatelessWidget {
           title: const Text('WEL'),
           bottom: const TabBar(
             unselectedLabelStyle: TextStyle(
-              fontSize: 20,
+              // fontSize: 20,
               fontFamily: "Fira Sans",
               fontWeight: FontWeight.bold,
             ),
             // unselectedLabelColor: Color(0xffcb5a9f),
             labelStyle: TextStyle(
-              fontSize: 20,
+              // fontSize: 20,
               fontFamily: "Fira Sans",
               fontWeight: FontWeight.bold,
             ),
@@ -72,7 +73,7 @@ class WELRoute extends StatelessWidget {
                   desc: "Disponible à partir du : 04/02",
                 ),
                 ExpandableImage(
-                  title: "Poke Bawl",
+                  title: "Poke Bowl",
                   desc: "Disponible à partir du : 05/02",
                 ),
                 ExpandableImage(
@@ -144,6 +145,18 @@ class WELRoute extends StatelessWidget {
             ),
           ],
         ),
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CommanderRoute()),
+            );
+          },
+          icon: const Icon(Icons.shopping_cart_checkout_sharp),
+          label: const Text('COMMANDER'),
+          backgroundColor: const Color(0xff1ad2d6),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
     );
   }
@@ -162,14 +175,20 @@ class CardGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 0),
+        padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Wrap(
             spacing: 8,
             runSpacing: 16,
             alignment: WrapAlignment.center,
-            children: [...cards],
+            children: [
+              ...cards,
+              const SizedBox(
+                width: double.infinity,
+                height: 60,
+              ),
+            ],
           ),
         ));
   }
@@ -182,7 +201,7 @@ class ExpandableImage extends StatelessWidget {
 
   const ExpandableImage(
       {Key? key,
-      this.img = "images/big-logo.png",
+      this.img = "images/oeil-blanc.png",
       this.title = "WEL 1",
       this.desc = "Aucune description fournis"})
       : super(key: key);
@@ -191,7 +210,8 @@ class ExpandableImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return FractionallySizedBox(
         // widthFactor: 0.325,
-        widthFactor: 0.31,
+        // widthFactor: 0.31,
+        widthFactor: 0.45,
         child: Card(
           elevation: 0,
           color: const Color(0xff4fb7d0),

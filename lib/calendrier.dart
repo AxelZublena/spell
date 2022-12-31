@@ -28,7 +28,7 @@ class CalendrierRoute extends StatelessWidget {
               itemCount: widgets.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
+                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                     child: widgets[index]);
               }),
         ));

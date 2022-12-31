@@ -11,7 +11,7 @@ class QuesakoRoute extends StatelessWidget {
           title: const Text("QUESAKO"),
         ),
         body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+          padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
           child: ListView(children: [
             DecoratedBox(
                 decoration: BoxDecoration(

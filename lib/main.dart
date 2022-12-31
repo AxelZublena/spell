@@ -74,7 +74,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
           appBar: mainBar(),
           body: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: ListView.builder(
                 itemCount: widgets.length,
                 itemBuilder: (BuildContext context, int index) {
