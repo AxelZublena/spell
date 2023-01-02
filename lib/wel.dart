@@ -218,7 +218,7 @@ class ExpandableImage extends StatelessWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           child: RoundedExpansionTile(
-            duration: const Duration(milliseconds: 50),
+            duration: const Duration(milliseconds: 120),
             noTrailing: true,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
