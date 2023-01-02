@@ -209,14 +209,13 @@ class ExpandableImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FractionallySizedBox(
-        // widthFactor: 0.325,
-        // widthFactor: 0.31,
         widthFactor: 0.45,
         child: Card(
-          elevation: 0,
-          color: const Color(0xff4fb7d0),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          elevation: 6,
+          color: const Color(0xff1198b8),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+              side: const BorderSide(color: Colors.black)),
           child: RoundedExpansionTile(
             duration: const Duration(milliseconds: 120),
             noTrailing: true,
@@ -234,7 +233,7 @@ class ExpandableImage extends StatelessWidget {
             children: [
               ListTile(
                 tileColor: Colors.white,
-                shape: RoundedRectangleBorder(
+                shape: const RoundedRectangleBorder(
                     // borderRadius: BorderRadius.circular(10)),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(10),
