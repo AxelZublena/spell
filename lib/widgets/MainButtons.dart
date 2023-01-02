@@ -33,7 +33,7 @@ class WELButton extends StatelessWidget {
         infoDesc:
             'Viens profiter du WEL !\n\nCommande les délice du sorcier-chef ',
         next: const WELRoute(
-          initIndex: 1,
+          initIndex: 0,
         ));
   }
 }
