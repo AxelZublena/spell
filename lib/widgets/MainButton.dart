@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rounded_expansion_tile/rounded_expansion_tile.dart';
 import 'package:spell/quesako.dart';
 
 class MainButton extends StatelessWidget {
@@ -12,7 +13,7 @@ class MainButton extends StatelessWidget {
     Key? key,
     this.text = "",
     this.infoDesc = "",
-    this.size = 50,
+    this.size = 40,
     this.font = "Imbue",
     this.next = const QuesakoRoute(),
   }) : super(key: key);
@@ -21,23 +22,26 @@ class MainButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         width: double.infinity,
-        child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
+        child: Card(
+            elevation: 6,
+            color: const Color(0xff1198b8),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+                side: const BorderSide(color: Colors.black)),
+            child: RoundedExpansionTile(
+              contentPadding: EdgeInsets.only(right: 8),
+              minVerticalPadding: 0,
+              duration: const Duration(milliseconds: 120),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),
-              side: const BorderSide(width: 1.0, color: Colors.black),
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => next),
-              );
-            },
-            child: Row(
-              children: [
-                Expanded(
-                    child: Center(
-                        child: Stack(
+              title: TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => next),
+                  );
+                },
+                child: Stack(
                   children: <Widget>[
                     // Stroked text as border.
                     Text(
@@ -63,42 +67,30 @@ class MainButton extends StatelessWidget {
                           letterSpacing: 6.0),
                     ),
                   ],
-                ))),
-                Align(
-                    alignment: Alignment.centerRight,
-                    child: Container(
-                        height: 50,
-                        width: 50,
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 2, color: Colors.white),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: TextButton(
-                          onPressed: () => showDialog<String>(
-                            context: context,
-                            builder: (BuildContext context) => SimpleDialog(
-                              backgroundColor: const Color(0xff4fb7d0),
-                              contentPadding:
-                                  EdgeInsets.fromLTRB(0.0, 16.0, 0.0, 16.0),
-                              children: [
-                                Center(
-                                    child: Container(
-                                  margin: const EdgeInsets.symmetric(
-                                      vertical: 0, horizontal: 16),
-                                  child: Text(
-                                    infoDesc,
-                                    textAlign: TextAlign.justify,
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ))
-                              ],
-                            ),
-                          ),
-                          child:
-                              Image.asset('images/oeil-blanc.png', width: 50),
-                        )))
+                ),
+              ),
+              trailing: Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 2, color: Colors.white),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(3),
+                  child: Image.asset('images/oeil-blanc.png'),
+                ),
+              ),
+              rotateTrailing: false,
+              children: [
+                ListTile(
+                  tileColor: Colors.white,
+                  shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10))),
+                  title: Text(infoDesc),
+                )
               ],
             )));
   }
