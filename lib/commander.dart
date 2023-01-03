@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spell/widgets/AppBars.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class CommanderRoute extends StatelessWidget {
@@ -7,8 +8,8 @@ class CommanderRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("COMMANDER"),
+        appBar: RegularAppBar(
+          title: "COMMANDER",
         ),
         body: Padding(
             padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),

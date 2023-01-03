@@ -2,8 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:spell/calendrier.dart';
+import 'package:spell/defis.dart';
 import 'package:spell/quesako.dart';
 import 'package:spell/wel.dart';
+import 'package:spell/widgets/AppBars.dart';
 import './widgets/MainButton.dart';
 import './widgets/SecondaryButton.dart';
 import './widgets/MainButtons.dart';
@@ -17,18 +19,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Widget button = Center(
-    //     child: ElevatedButton.icon(
-    //   onPressed: () {
-    //     debugPrint("Clicked!");
-    //   },
-    //   icon: ImageIcon(
-    //     AssetImage('images/oeil.png'),
-    //     size: 50,
-    //   ),
-    //   label: Text('Image'), // <-- Text
-    // ));
-
     Map<int, Color> primaryColorMap = {
       50: const Color.fromRGBO(203, 90, 159, .1),
       100: const Color.fromRGBO(203, 90, 159, .2),
@@ -72,7 +62,7 @@ class MyApp extends StatelessWidget {
       ),
       title: 'Spell',
       home: Scaffold(
-          appBar: mainBar(),
+          appBar: const MainAppBar(),
           body: Padding(
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: ListView.builder(
@@ -99,6 +89,9 @@ class SecondSecondaryRow extends StatelessWidget {
         Expanded(
             child: SecondaryButton(
           text: "HEBDO",
+          next: DefisRoute(
+            initIndex: 0,
+          ),
         )),
         SizedBox(
           width: 20,
@@ -106,6 +99,9 @@ class SecondSecondaryRow extends StatelessWidget {
         Expanded(
           child: SecondaryButton(
             text: "JOURNALIER",
+            next: DefisRoute(
+              initIndex: 1,
+            ),
           ),
         ),
       ],
@@ -125,7 +121,7 @@ class FirstSecondaryRow extends StatelessWidget {
         Expanded(
           child: SecondaryButton(
             text: "PLATS",
-            next: const WELRoute(
+            next: WELRoute(
               initIndex: 0,
             ),
           ),
@@ -136,7 +132,7 @@ class FirstSecondaryRow extends StatelessWidget {
         Expanded(
           child: SecondaryButton(
             text: "DESSERTS",
-            next: const WELRoute(
+            next: WELRoute(
               initIndex: 1,
             ),
           ),
@@ -147,7 +143,7 @@ class FirstSecondaryRow extends StatelessWidget {
         Expanded(
           child: SecondaryButton(
             text: "AUTRES",
-            next: const WELRoute(
+            next: WELRoute(
               initIndex: 2,
             ),
           ),

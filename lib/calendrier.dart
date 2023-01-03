@@ -2,18 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import './widgets/MainButton.dart';
 import './widgets/MainButtons.dart';
+import 'package:date_picker_timeline/date_picker_timeline.dart';
 
 class CalendrierRoute extends StatelessWidget {
-  final List<StatelessWidget> widgets;
-
   const CalendrierRoute({
     Key? key,
-    this.widgets = const <StatelessWidget>[
-      Calendar(),
-      Details(),
-      SOSButton(),
-      SoireeMuletsButton()
-    ],
   }) : super(key: key);
 
   @override
@@ -22,134 +15,125 @@ class CalendrierRoute extends StatelessWidget {
         appBar: AppBar(
           title: const Text("CALENDRIER"),
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-          child: ListView.builder(
-              itemCount: widgets.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                    child: widgets[index]);
-              }),
-        ));
+        body: Calendrier());
   }
 }
 
-class Calendar extends StatelessWidget {
-  const Calendar({
-    Key? key,
-  }) : super(key: key);
+class Calendrier extends StatefulWidget {
+  Calendrier({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(children: const [
-          DayButton(
-            position: [0, 5, 10, 0],
-            date: "27/01",
-            isSelected: true,
-          ),
-          DayButton(
-            position: [0, 30, 0, 0],
-          ),
-          DayButton(
-            position: [0, 0, 0, 0],
-          ),
-          DayButton(
-            position: [0, 30, 0, 0],
-          ),
-        ]),
-        Row(children: const [
-          DayButton(
-            position: [30, 0, 0, 0],
-          ),
-          DayButton(
-            position: [10, 50, 0, 0],
-          ),
-          DayButton(
-            position: [20, 0, 0, 0],
-          ),
-          DayButton(
-            position: [10, 30, 0, 0],
-          ),
-        ]),
-        Row(children: const [
-          DayButton(
-            position: [0, 5, 0, 0],
-          ),
-          DayButton(
-            position: [0, 30, 0, 0],
-          ),
-          DayButton(
-            position: [0, 0, 10, 0],
-          ),
-          DayButton(
-            position: [0, 30, 10, 0],
-          ),
-        ]),
-      ],
-    );
-  }
+  _CalendrierState createState() => _CalendrierState();
 }
 
-class Details extends StatelessWidget {
-  const Details({Key? key}) : super(key: key);
+class _CalendrierState extends State<Calendrier> {
+  DatePickerController _controller = DatePickerController();
+
+  List<StatelessWidget> _displayedWidgets = <StatelessWidget>[
+    const SOSButton(),
+    const SoireeMuletsButton(),
+  ];
 
   @override
-  Widget build(BuildContext context) {
-    return const SizedBox(
-        width: double.infinity,
-        height: 25,
-        child: DecoratedBox(
-            decoration: BoxDecoration(color: const Color(0xff1198b8)),
-            child: Center(
-              child: Text("Vendredi 27/01"),
-            )));
+  void initState() {
+    super.initState();
   }
-}
-
-class DayButton extends StatelessWidget {
-  final List<double> position;
-  final String date;
-  final bool isSelected;
-
-  const DayButton(
-      {Key? key,
-      this.position = const <double>[0, 0, 0, 0],
-      this.date = "27/01",
-      this.isSelected = false})
-      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: TextButton(
-          onPressed: () {},
-          // Add image & text
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(0, 0, 0, 0
-                // position[0],
-                // position[1],
-                // position[2],
-                // position[3],
-                ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                isSelected
-                    ? Image.asset("images/date-icon.png")
-                    : Image.asset("images/penta.png"),
-                Text(
-                  date,
-                  style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
-                ),
+    return Padding(
+        padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+        child: SingleChildScrollView(
+            child: Wrap(
+          runSpacing: 20,
+          children: [
+            DatePicker(
+              DateTime.utc(2023, 1, 27),
+              width: 60,
+              height: 80,
+              controller: _controller,
+              initialSelectedDate: DateTime.utc(2023, 1, 27),
+              selectionColor: Colors.black,
+              selectedTextColor: Colors.white,
+              activeDates: [
+                DateTime.utc(2023, 1, 27),
+                DateTime.utc(2023, 1, 28),
+                DateTime.utc(2023, 1, 29),
+                DateTime.utc(2023, 1, 30),
+                DateTime.utc(2023, 1, 31),
+                DateTime.utc(2023, 2, 1),
+                DateTime.utc(2023, 2, 2),
+                DateTime.utc(2023, 2, 3),
+                DateTime.utc(2023, 2, 4),
+                DateTime.utc(2023, 2, 5),
+                DateTime.utc(2023, 2, 6),
+                DateTime.utc(2023, 2, 7),
               ],
+              onDateChange: (date) {
+                List<StatelessWidget> widgets = <StatelessWidget>[];
+                // New date selected
+                if (date.toString().split(" ")[0] == "2023-01-27") {
+                  widgets = <StatelessWidget>[
+                    const SoireeMuletsButton(),
+                    const SoireeMuletsButton(),
+                    const SOSButton(),
+                    const SoireeMuletsButton()
+                  ];
+                } else if (date.toString().split(" ")[0] == "2023-01-28") {
+                  widgets = <StatelessWidget>[
+                    const SOSButton(),
+                    const SoireeMuletsButton()
+                  ];
+                } else if (date.toString().split(" ")[0] == "2023-01-29") {
+                  widgets = <StatelessWidget>[
+                    const SOSButton(),
+                    const SoireeMuletsButton()
+                  ];
+                } else if (date.toString().split(" ")[0] == "2023-01-30") {
+                  widgets = <StatelessWidget>[
+                    const SOSButton(),
+                    const SoireeMuletsButton()
+                  ];
+                } else if (date.toString().split(" ")[0] == "2023-01-31") {
+                  widgets = <StatelessWidget>[
+                    const SOSButton(),
+                    const SoireeMuletsButton()
+                  ];
+                } else if (date.toString().split(" ")[0] == "2023-02-01") {
+                  widgets = <StatelessWidget>[
+                    const SOSButton(),
+                    const SoireeMuletsButton()
+                  ];
+                } else if (date.toString().split(" ")[0] == "2023-02-02") {
+                  widgets = <StatelessWidget>[
+                    const SoireeMuletsButton(),
+                    const SOSButton(),
+                  ];
+                } else if (date.toString().split(" ")[0] == "2023-02-03") {
+                  widgets = <StatelessWidget>[
+                    const SoireeMuletsButton(),
+                    const SOSButton(),
+                  ];
+                } else {
+                  widgets = <StatelessWidget>[
+                    const SOSButton(),
+                  ];
+                }
+
+                setState(() {
+                  _displayedWidgets = widgets;
+                });
+              },
+              locale: "fr_FR",
             ),
-          )),
-    );
+            const SizedBox(
+              width: 20,
+            ),
+            ..._displayedWidgets,
+            const SizedBox(
+              width: 20,
+            ),
+          ],
+        )));
   }
 }

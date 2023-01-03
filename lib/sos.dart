@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:rounded_expansion_tile/rounded_expansion_tile.dart';
+import 'package:spell/commander.dart';
 
 class SOSRoute extends StatelessWidget {
   const SOSRoute({super.key});
 
+  // Ajouter btn commander + page similaire a WEL
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -103,6 +105,18 @@ class SOSRoute extends StatelessWidget {
             ),
           ],
         ),
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CommanderRoute()),
+            );
+          },
+          icon: const Icon(Icons.shopping_cart_checkout_sharp),
+          label: const Text('COMMANDER'),
+          backgroundColor: const Color(0xff1ad2d6),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
     );
   }
@@ -145,7 +159,7 @@ class ExpandableCard extends StatelessWidget {
     Key? key,
     this.title = "",
     this.desc = "Aucunes infos disponibles pour le moment.",
-    this.size = 50,
+    this.size = 40,
     this.font = "Imbue",
   }) : super(key: key);
 
@@ -166,7 +180,7 @@ class ExpandableCard extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             title: Center(
                 child: Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: Stack(
                 children: <Widget>[
                   // Stroked text as border.
@@ -180,7 +194,7 @@ class ExpandableCard extends StatelessWidget {
                           ..style = PaintingStyle.stroke
                           ..strokeWidth = 2
                           ..color = Colors.black,
-                        letterSpacing: 4.0),
+                        letterSpacing: 2.0),
                   ),
                   // Solid text as fill.
                   Text(
@@ -190,7 +204,7 @@ class ExpandableCard extends StatelessWidget {
                         fontFamily: font,
                         fontWeight: FontWeight.bold,
                         color: const Color(0xffcb5a9f),
-                        letterSpacing: 4.0),
+                        letterSpacing: 2.0),
                   ),
                 ],
               ),
