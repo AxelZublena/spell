@@ -69,16 +69,3 @@ class CalendrierButton extends StatelessWidget {
     );
   }
 }
-
-class SoireeMuletsButton extends StatelessWidget {
-  const SoireeMuletsButton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MainButton(
-        text: "SOIREE MULETS",
-        infoDesc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE');
-  }
-}
