@@ -20,7 +20,7 @@ class SecondaryButton extends StatelessWidget {
         width: double.infinity,
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: const Color(0xff4fb7d0),
+              backgroundColor: const Color(0xff4fb7d0),
               padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 0),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),

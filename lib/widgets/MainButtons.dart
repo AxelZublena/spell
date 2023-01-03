@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:spell/calendrier.dart';
-import 'package:spell/commander.dart';
 import 'package:spell/defis.dart';
 import 'package:spell/sos.dart';
 import 'package:spell/wel.dart';
@@ -13,11 +12,11 @@ class DefisButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MainButton(
+    return const MainButton(
         text: "DEFIS",
         infoDesc:
             'Envie de challenge ?\n\nComplete un max de défis pour remporter des lots d’un autre monde !',
-        next: const DefisRoute());
+        next: DefisRoute());
   }
 }
 
@@ -28,11 +27,11 @@ class WELButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MainButton(
+    return const MainButton(
         text: "WEL",
         infoDesc:
             'Viens profiter du WEL !\n\nCommande les délice du sorcier-chef ',
-        next: const WELRoute(
+        next: WELRoute(
           initIndex: 0,
         ));
   }
@@ -45,12 +44,11 @@ class SOSButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MainButton(
+    return const MainButton(
         text: "SOS",
         infoDesc:
             'Viens profiter du SOS !\n\nChoisis ta catégorie et nous ferons de notre mieux pour remplir ta demande',
-        next: const SOSRoute());
-    ;
+        next: SOSRoute());
   }
 }
 
@@ -61,11 +59,11 @@ class CalendrierButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MainButton(
+    return const MainButton(
       text: "CALENDRIER",
       infoDesc:
           'C’est la semaine des campagnes !\nPleins d’événements t’attendent !',
-      next: const CalendrierRoute(),
+      next: CalendrierRoute(),
     );
   }
 }

@@ -7,7 +7,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   }) : super(key: key);
 
   @override
-  Size get preferredSize => Size.fromHeight(60.0);
+  Size get preferredSize => const Size.fromHeight(60.0);
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class RegularAppBar extends StatelessWidget implements PreferredSizeWidget {
   }) : super(key: key);
 
   @override
-  Size get preferredSize => Size.fromHeight(60);
+  Size get preferredSize => const Size.fromHeight(60);
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +63,7 @@ class RegularAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: <Widget>[
         Center(
-          child: Padding(padding: EdgeInsets.all(8), child: Text(title)),
+          child: Padding(padding: const EdgeInsets.all(8), child: Text(title)),
         )
       ],
     );

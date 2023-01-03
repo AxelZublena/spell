@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:spell/widgets/ExpandableCard.dart';
-import 'package:url_launcher/url_launcher_string.dart';
-import './widgets/MainButton.dart';
 import './widgets/MainButtons.dart';
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 
@@ -16,12 +14,12 @@ class CalendrierRoute extends StatelessWidget {
         appBar: AppBar(
           title: const Text("CALENDRIER"),
         ),
-        body: Calendrier());
+        body: const Calendrier());
   }
 }
 
 class Calendrier extends StatefulWidget {
-  Calendrier({Key? key}) : super(key: key);
+  const Calendrier({Key? key}) : super(key: key);
 
   @override
   _CalendrierState createState() => _CalendrierState();
@@ -32,7 +30,7 @@ class _CalendrierState extends State<Calendrier> {
 
   List<StatelessWidget> _displayedWidgets = <StatelessWidget>[
     const SOSButton(),
-    ExpandableCard(
+    const ExpandableCard(
         title: "SOIREE MULETS", desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE')
   ];
 
@@ -75,31 +73,31 @@ class _CalendrierState extends State<Calendrier> {
                 List<StatelessWidget> widgets = <StatelessWidget>[];
                 // New date selected
                 if (date.toString().split(" ")[0] == "2023-01-27") {
-                  widgets = <StatelessWidget>[
-                    const SOSButton(),
+                  widgets = const <StatelessWidget>[
+                    SOSButton(),
                     ExpandableCard(
                         title: "SOIREE MULETS",
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE')
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-01-28") {
-                  widgets = <StatelessWidget>[
+                  widgets = const <StatelessWidget>[
                     ExpandableCard(
                         title: "SOIREE SPELL",
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
-                    const SOSButton(),
+                    SOSButton(),
                     ExpandableCard(
                         title: "EVENT SPORT 3e Liste",
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-01-29") {
-                  widgets = <StatelessWidget>[
-                    const SOSButton(),
+                  widgets = const <StatelessWidget>[
+                    SOSButton(),
                     ExpandableCard(
                         title: "EVENT SPORT MULETS",
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-01-30") {
-                  widgets = <StatelessWidget>[
+                  widgets = const <StatelessWidget>[
                     ExpandableCard(
                         title: "MINP SPELL",
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
@@ -108,7 +106,7 @@ class _CalendrierState extends State<Calendrier> {
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-01-31") {
-                  widgets = <StatelessWidget>[
+                  widgets = const <StatelessWidget>[
                     ExpandableCard(
                         title: "MINP 3e Liste",
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
@@ -117,13 +115,13 @@ class _CalendrierState extends State<Calendrier> {
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-02-01") {
-                  widgets = <StatelessWidget>[
+                  widgets = const <StatelessWidget>[
                     ExpandableCard(
                         title: "FAKELISTE",
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-02-02") {
-                  widgets = <StatelessWidget>[
+                  widgets = const <StatelessWidget>[
                     ExpandableCard(
                         title: "MINP MULETS",
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
@@ -132,16 +130,16 @@ class _CalendrierState extends State<Calendrier> {
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-02-03") {
-                  widgets = <StatelessWidget>[WELButton()];
+                  widgets = const <StatelessWidget>[WELButton()];
                 } else if (date.toString().split(" ")[0] == "2023-02-04") {
-                  widgets = <StatelessWidget>[
+                  widgets = const <StatelessWidget>[
                     WELButton(),
                     ExpandableCard(
                         title: "SOIREE 3e Liste",
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-02-05") {
-                  widgets = <StatelessWidget>[
+                  widgets = const <StatelessWidget>[
                     ExpandableCard(
                         title: "EVENT SPORT SPELL",
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
@@ -151,20 +149,20 @@ class _CalendrierState extends State<Calendrier> {
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-02-06") {
-                  widgets = <StatelessWidget>[
+                  widgets = const <StatelessWidget>[
                     ExpandableCard(
                         title: "VOTE",
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-02-07") {
-                  widgets = <StatelessWidget>[
+                  widgets = const <StatelessWidget>[
                     ExpandableCard(
                         title: "RESULTATS",
                         desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
                   ];
                 } else {
-                  widgets = <StatelessWidget>[
-                    const SOSButton(),
+                  widgets = const <StatelessWidget>[
+                    SOSButton(),
                   ];
                 }
 

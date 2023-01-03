@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rounded_expansion_tile/rounded_expansion_tile.dart';
 import 'package:spell/commander.dart';
 
 import 'widgets/ExpandableCard.dart';
@@ -142,7 +141,7 @@ class CardColumn extends StatelessWidget {
         itemCount: cards.length,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
-            padding: EdgeInsets.only(bottom: 10),
+            padding: const EdgeInsets.only(bottom: 10),
             child: cards[index],
           );
         },

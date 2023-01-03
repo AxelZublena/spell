@@ -1,12 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:spell/calendrier.dart';
 import 'package:spell/defis.dart';
-import 'package:spell/quesako.dart';
 import 'package:spell/wel.dart';
 import 'package:spell/widgets/AppBars.dart';
-import './widgets/MainButton.dart';
 import './widgets/SecondaryButton.dart';
 import './widgets/MainButtons.dart';
 
@@ -45,13 +40,13 @@ class MyApp extends StatelessWidget {
     };
 
     final List<StatelessWidget> widgets = <StatelessWidget>[
-      CalendrierButton(),
-      SOSButton(),
-      WELButton(),
-      FirstSecondaryRow(),
-      DefisButton(),
-      SecondSecondaryRow(),
-      BigImage(),
+      const CalendrierButton(),
+      const SOSButton(),
+      const WELButton(),
+      const FirstSecondaryRow(),
+      const DefisButton(),
+      const SecondSecondaryRow(),
+      const BigImage(),
     ];
 
     return MaterialApp(
@@ -69,7 +64,7 @@ class MyApp extends StatelessWidget {
                 itemCount: widgets.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
                       child: widgets[index]);
                 }),
           )),
@@ -161,38 +156,5 @@ class BigImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset('images/big-logo.png', width: 50);
-  }
-}
-
-class mainBar extends StatelessWidget implements PreferredSizeWidget {
-  const mainBar({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Size get preferredSize => Size.fromHeight(60.0);
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      centerTitle: true,
-      leading: Builder(
-        builder: (BuildContext context) {
-          return IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const QuesakoRoute()),
-              );
-            },
-            icon: ImageIcon(
-              AssetImage('images/cristal.png'),
-              size: 130,
-            ),
-          );
-        },
-      ),
-      title: Image.asset('images/oeil.png', width: 80),
-    );
   }
 }

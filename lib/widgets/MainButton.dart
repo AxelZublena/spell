@@ -29,7 +29,7 @@ class MainButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 side: const BorderSide(color: Colors.black)),
             child: RoundedExpansionTile(
-              contentPadding: EdgeInsets.only(right: 8),
+              contentPadding: const EdgeInsets.only(right: 8),
               minVerticalPadding: 0,
               duration: const Duration(milliseconds: 120),
               shape: RoundedRectangleBorder(
@@ -77,7 +77,7 @@ class MainButton extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(3),
+                  padding: const EdgeInsets.all(3),
                   child: Image.asset('images/oeil-blanc.png'),
                 ),
               ),
