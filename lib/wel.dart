@@ -65,10 +65,6 @@ class WELRoute extends StatelessWidget {
                   desc: "Disponible à partir du : 03/02",
                 ),
                 ExpandableImage(
-                  title: "Courgettes Farcies",
-                  desc: "Disponible à partir du : 03/02",
-                ),
-                ExpandableImage(
                   title: "Tartiflette",
                   desc: "Disponible à partir du : 04/02",
                 ),
@@ -88,6 +84,10 @@ class WELRoute extends StatelessWidget {
                   title: "Lasagnes VEGE",
                   desc:
                       "Des lasagnes élaborées par notre sorcier-chef, à base d’épinards. Disponible à partir du : 05/02",
+                ),
+                ExpandableImage(
+                  title: "Courgettes Farcies",
+                  desc: "Disponible à partir du : 03/02",
                 ),
               ],
             ),
@@ -224,10 +224,40 @@ class ExpandableImage extends StatelessWidget {
             title: Column(
               children: [
                 Image.asset(img),
-                Text(
-                  title,
-                  textAlign: TextAlign.center,
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8),
+                  child: Stack(
+                    children: <Widget>[
+                      // Stroked text as border.
+                      Text(
+                        title,
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: "Fira Sans",
+                            fontWeight: FontWeight.bold,
+                            foreground: Paint()
+                              ..style = PaintingStyle.stroke
+                              ..strokeWidth = 2
+                              ..color = Colors.black,
+                            letterSpacing: 0.0),
+                      ),
+                      // Solid text as fill.
+                      Text(
+                        title,
+                        style: const TextStyle(
+                            fontSize: 20,
+                            fontFamily: "Fira Sans",
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xffcb5a9f),
+                            letterSpacing: 0.0),
+                      ),
+                    ],
+                  ),
                 ),
+                // Text(
+                //   title,
+                //   textAlign: TextAlign.center,
+                // ),
               ],
             ),
             children: [
@@ -239,6 +269,8 @@ class ExpandableImage extends StatelessWidget {
                         bottomLeft: Radius.circular(10),
                         bottomRight: Radius.circular(10))),
                 title: Text(desc),
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 5, horizontal: 12),
               )
             ],
           ),

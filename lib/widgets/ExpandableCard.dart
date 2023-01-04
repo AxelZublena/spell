@@ -69,6 +69,8 @@ class ExpandableCard extends StatelessWidget {
                         bottomLeft: Radius.circular(10),
                         bottomRight: Radius.circular(10))),
                 title: Text(desc),
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 5, horizontal: 12),
               )
             ],
           ),
