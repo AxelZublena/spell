@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rounded_expansion_tile/rounded_expansion_tile.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class DefisRoute extends StatelessWidget {
   final int initIndex;
@@ -35,22 +36,85 @@ class DefisRoute extends StatelessWidget {
             ],
           ),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: <Widget>[
-            Center(child: Text("HEBDOMADAIRE")),
-            CardColumn(
-              cards: [
-                ExpandableCard(
-                  title: "DAILY 1",
-                ),
-                ExpandableCard(
-                  title: "DAILY 2",
-                ),
-                ExpandableCard(
-                  title: "DAILY 3",
-                ),
-              ],
-            ),
+            Padding(
+                padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      child: DecoratedBox(
+                          decoration: BoxDecoration(
+                              border: Border.all(width: 2, color: Colors.black),
+                              borderRadius: BorderRadius.circular(10),
+                              color: const Color(0xff1198b8)),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 20.0, vertical: 10.0),
+                            child: Text(
+                              "1 - Talent liste\n"
+                              "2 - Vol\n"
+                              "3 - Memes\n"
+                              "4 - Musique\n"
+                              "5 - Magie\n"
+                              "6 - Costumes\n"
+                              "7 - Danse\n"
+                              "8 - Event",
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                // fontWeight: FontWeight.bold,
+                                fontFamily: "Fira Sans",
+                                fontSize: 20,
+                              ),
+                            ),
+                          )),
+                    ),
+                  ],
+                )),
+            Padding(
+                padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      child: DecoratedBox(
+                          decoration: BoxDecoration(
+                              border: Border.all(width: 2, color: Colors.black),
+                              borderRadius: BorderRadius.circular(10),
+                              color: const Color(0xff1198b8)),
+                          child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 20.0, vertical: 10.0),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    "Check la story du jour pour connaître le défi !",
+                                    textAlign: TextAlign.justify,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Fira Sans",
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.all(10),
+                                    child: SizedBox(
+                                      width: 100,
+                                      child: Logo(
+                                        src: 'images/insta-logo-purple.png',
+                                        nativeUrl:
+                                            "instagram://user?username=grenoble_inp_phelma",
+                                        webUrl:
+                                            "https://www.instagram.com/grenoble_inp_phelma",
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ))),
+                    ),
+                  ],
+                )),
           ],
         ),
       ),
@@ -157,5 +221,39 @@ class ExpandableCard extends StatelessWidget {
             ],
           ),
         ));
+  }
+}
+
+_launchInstagram(String nativeUrl, String webUrl) async {
+  // var nativeUrl = "instagram://user?username=balkan.exe";
+  // var webUrl = "https://www.instagram.com/balkan.exe";
+
+  try {
+    await launchUrlString(nativeUrl, mode: LaunchMode.externalApplication);
+  } catch (e) {
+    await launchUrlString(webUrl, mode: LaunchMode.platformDefault);
+  }
+}
+
+class Logo extends StatelessWidget {
+  final String src;
+  final String nativeUrl;
+  final String webUrl;
+
+  const Logo({
+    Key? key,
+    this.src = "images/insta-logo.png",
+    this.nativeUrl = "instagram://user?username=balkan.exe",
+    this.webUrl = "https://www.instagram.com/balkan.exe",
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () => {_launchInstagram(nativeUrl, webUrl)},
+      child: Image.asset(
+        src,
+      ),
+    );
   }
 }
