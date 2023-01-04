@@ -31,7 +31,11 @@ class _CalendrierState extends State<Calendrier> {
   List<StatelessWidget> _displayedWidgets = <StatelessWidget>[
     const SOSButton(),
     const ExpandableCard(
-        title: "SOIREE MULETS", desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE')
+      title: "SOIREE MULETS",
+      desc: "SOIREE MULETS",
+      date: "22h - 5h",
+      address: "3 Parv. Louis Néel, 38000 Grenoble",
+    ),
   ];
 
   @override
@@ -76,43 +80,66 @@ class _CalendrierState extends State<Calendrier> {
                   widgets = const <StatelessWidget>[
                     SOSButton(),
                     ExpandableCard(
-                        title: "SOIREE MULETS",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE')
+                      title: "SOIREE MULETS",
+                      desc: "SOIREE MULETS",
+                      date: "22h - 5h",
+                      address: "3 Parv. Louis Néel, 38000 Grenoble",
+                    ),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-01-28") {
                   widgets = const <StatelessWidget>[
                     ExpandableCard(
-                        title: "SOIREE SPELL",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
+                      title: "SOIREE SPELL",
+                      desc: "SOIREE SPELL",
+                      date: "22h - 5h",
+                    ),
                     SOSButton(),
                     ExpandableCard(
-                        title: "EVENT SPORT 3e Liste",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
+                      title: "EVENT SPORT 3e Liste",
+                      desc: "SOIREE SPORT 3e Liste",
+                      date: "10h - 20h",
+                    ),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-01-29") {
                   widgets = const <StatelessWidget>[
                     SOSButton(),
                     ExpandableCard(
-                        title: "EVENT SPORT MULETS",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
+                      title: "EVENT SPORT MULETS",
+                      desc: "EVENT SPORT MULETS",
+                      date: "10h - 20h",
+                    ),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-01-30") {
                   widgets = const <StatelessWidget>[
                     ExpandableCard(
-                        title: "MINP SPELL",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
+                      title: "MINP SPELL",
+                      desc: "MINP SPELL",
+                      date: "20h - 00h",
+                      address:
+                          "Domaine Universitaire, 730 Rue de la Piscine, 38402 Saint-Martin-d'Hères",
+                    ),
                     ExpandableCard(
-                        title: "GOUTER",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
+                      title: "GOUTER",
+                      desc: "GOUTER",
+                      date: "18h - 20h",
+                      address: "3e Liste - Parvis Minatec\nMULETS - Campus",
+                    ),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-01-31") {
                   widgets = const <StatelessWidget>[
                     ExpandableCard(
-                        title: "MINP 3e Liste",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
+                      title: "MINP 3e Liste",
+                      desc: "MINP 3e Liste",
+                      date: "20h - 00h",
+                      address:
+                          "Domaine Universitaire, 730 Rue de la Piscine, 38402 Saint-Martin-d'Hères",
+                    ),
                     ExpandableCard(
-                        title: "GOUTER",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
+                      title: "GOUTER",
+                      desc: "GOUTER",
+                      date: "18h - 20h",
+                      address: "MULETS - Parvis Minatec\nSPELL - Campus",
+                    ),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-02-01") {
                   widgets = const <StatelessWidget>[
@@ -123,11 +150,18 @@ class _CalendrierState extends State<Calendrier> {
                 } else if (date.toString().split(" ")[0] == "2023-02-02") {
                   widgets = const <StatelessWidget>[
                     ExpandableCard(
-                        title: "MINP MULETS",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
+                      title: "MINP MULETS",
+                      desc: "MINP MULETS",
+                      date: "20h - 00h",
+                      address:
+                          "Domaine Universitaire, 730 Rue de la Piscine, 38402 Saint-Martin-d'Hères",
+                    ),
                     ExpandableCard(
-                        title: "GOUTER",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
+                      title: "GOUTER",
+                      desc: "GOUTER",
+                      date: "18h - 20h",
+                      address: "SPELL - Parvis Minatec\n3e Liste - Campus",
+                    ),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-02-03") {
                   widgets = const <StatelessWidget>[WELButton()];
@@ -135,30 +169,40 @@ class _CalendrierState extends State<Calendrier> {
                   widgets = const <StatelessWidget>[
                     WELButton(),
                     ExpandableCard(
-                        title: "SOIREE 3e Liste",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
+                      title: "SOIREE 3e Liste",
+                      desc: "SOIREE 3e Liste",
+                      date: "22h - 5h",
+                    ),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-02-05") {
                   widgets = const <StatelessWidget>[
                     ExpandableCard(
-                        title: "EVENT SPORT SPELL",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
+                      title: "EVENT SPORT SPELL",
+                      desc: "EVENT SPORT SPELL",
+                      date: "10h - 20h",
+                    ),
                     WELButton(),
                     ExpandableCard(
-                        title: "DISCOURS - DEBAT",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
+                      title: "DISCOURS - DEBAT",
+                      desc: "DISCOURS - DEBAT",
+                      date: "16h - 28h",
+                    ),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-02-06") {
                   widgets = const <StatelessWidget>[
                     ExpandableCard(
-                        title: "VOTE",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
+                      title: "VOTE",
+                      desc: "VOTE",
+                      date: "8h - 5h",
+                    ),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-02-07") {
                   widgets = const <StatelessWidget>[
                     ExpandableCard(
-                        title: "RESULTATS",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
+                      title: "RESULTATS",
+                      desc: "RESULTAT",
+                      date: "18h",
+                    ),
                   ];
                 } else {
                   widgets = const <StatelessWidget>[

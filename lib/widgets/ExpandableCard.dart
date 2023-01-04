@@ -6,6 +6,8 @@ class ExpandableCard extends StatelessWidget {
   final String desc;
   final double size;
   final String font;
+  final String date;
+  final String address;
 
   const ExpandableCard({
     Key? key,
@@ -13,6 +15,8 @@ class ExpandableCard extends StatelessWidget {
     this.desc = "Aucunes infos disponibles pour le moment.",
     this.size = 40,
     this.font = "Imbue",
+    this.date = "",
+    this.address = "",
   }) : super(key: key);
 
   @override
@@ -68,7 +72,23 @@ class ExpandableCard extends StatelessWidget {
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(10),
                         bottomRight: Radius.circular(10))),
-                title: Text(desc),
+                title: Column(
+                  children: [
+                    Text(desc),
+                    date == ""
+                        ? SizedBox()
+                        : Text(
+                            date,
+                            style: TextStyle(
+                                fontSize: size,
+                                fontFamily: font,
+                                fontWeight: FontWeight.bold,
+                                color: const Color(0xffcb5a9f),
+                                letterSpacing: 6.0),
+                          ),
+                    address == "" ? SizedBox() : Text(address),
+                  ],
+                ),
                 contentPadding:
                     const EdgeInsets.symmetric(vertical: 5, horizontal: 12),
               )
