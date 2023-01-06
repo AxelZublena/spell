@@ -61,11 +61,11 @@ class RegularAppBar extends StatelessWidget implements PreferredSizeWidget {
               ));
         },
       ),
-      actions: <Widget>[
-        Center(
-          child: Padding(padding: const EdgeInsets.all(8), child: Text(title)),
-        )
-      ],
+      // actions: <Widget>[
+      //   Center(
+      //     child: Padding(padding: const EdgeInsets.all(8), child: Text(title)),
+      //   )
+      // ],
     );
   }
 }

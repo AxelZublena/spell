@@ -142,11 +142,7 @@ class _CalendrierState extends State<Calendrier> {
                     ),
                   ];
                 } else if (date.toString().split(" ")[0] == "2023-02-01") {
-                  widgets = const <StatelessWidget>[
-                    ExpandableCard(
-                        title: "FAKELISTE",
-                        desc: 'SOIREE MULETS\n\n22h - 5h\n\nADRESSE'),
-                  ];
+                  widgets = const <StatelessWidget>[];
                 } else if (date.toString().split(" ")[0] == "2023-02-02") {
                   widgets = const <StatelessWidget>[
                     ExpandableCard(
