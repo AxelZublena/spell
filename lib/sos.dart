@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:spell/commander.dart';
 import 'package:spell/commander_sos.dart';
 import 'package:spell/widgets/LogoLinks.dart';
 
@@ -39,7 +38,7 @@ class SOSRoute extends StatelessWidget {
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: <Widget>[
             CardColumn(
               cards: [
@@ -58,7 +57,7 @@ class SOSRoute extends StatelessWidget {
                       "Saucisson, cacahuètes, chips, petit dés d'emmental (3 €)",
                 ),
                 LogoLinks(),
-                const SizedBox(
+                SizedBox(
                   width: double.infinity,
                   height: 60,
                 ),
@@ -97,7 +96,7 @@ class SOSRoute extends StatelessWidget {
                       "Tu donnes ta recette, on fait les courses si besoin et on cuisine pour toi",
                 ),
                 LogoLinks(),
-                const SizedBox(
+                SizedBox(
                   width: double.infinity,
                   height: 60,
                 ),
@@ -118,7 +117,7 @@ class SOSRoute extends StatelessWidget {
                   desc: "Pour des mains de fées",
                 ),
                 LogoLinks(),
-                const SizedBox(
+                SizedBox(
                   width: double.infinity,
                   height: 60,
                 ),
@@ -144,7 +143,7 @@ class SOSRoute extends StatelessWidget {
                   desc: "Sport, amour ou relooking",
                 ),
                 LogoLinks(),
-                const SizedBox(
+                SizedBox(
                   width: double.infinity,
                   height: 60,
                 ),

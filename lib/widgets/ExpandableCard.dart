@@ -77,7 +77,10 @@ class ExpandableCard extends StatelessWidget {
                               bottomRight: Radius.circular(10))),
                       title: Column(
                         children: [
-                          Text(desc),
+                          Text(
+                            desc,
+                            textAlign: TextAlign.justify,
+                          ),
                           date == ""
                               ? SizedBox()
                               : Text(

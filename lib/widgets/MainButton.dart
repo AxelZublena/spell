@@ -89,7 +89,9 @@ class MainButton extends StatelessWidget {
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(10),
                           bottomRight: Radius.circular(10))),
-                  title: Text(infoDesc),
+                  title: Text(
+                    infoDesc,
+                  ),
                   contentPadding:
                       const EdgeInsets.symmetric(vertical: 5, horizontal: 12),
                 )

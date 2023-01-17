@@ -146,7 +146,6 @@ class _CalendrierState extends State<Calendrier> {
                   widgets = const <StatelessWidget>[
                     ExpandableCard(
                       title: "FAKELISTE",
-                      desc: "Les 2A ont préparé 2-3 trucs.",
                       isPurple: true,
                     ),
                   ];

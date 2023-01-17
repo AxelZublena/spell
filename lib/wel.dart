@@ -142,7 +142,7 @@ class WELRoute extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                               color: const Color(0xff1198b8)),
                           child: Padding(
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                   horizontal: 20.0, vertical: 10.0),
                               child: Column(
                                 children: const [
@@ -175,7 +175,7 @@ class WELRoute extends StatelessWidget {
                       width: double.infinity,
                       height: 15,
                     ),
-                    LogoLinks(),
+                    const LogoLinks(),
                   ],
                 )),
           ],
