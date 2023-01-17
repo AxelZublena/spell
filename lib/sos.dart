@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:spell/commander.dart';
+import 'package:spell/commander_sos.dart';
+import 'package:spell/widgets/LogoLinks.dart';
 
+import 'widgets/CardColumn.dart';
 import 'widgets/ExpandableCard.dart';
 
 class SOSRoute extends StatelessWidget {
@@ -10,7 +13,7 @@ class SOSRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 5,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
           title: const Text('SOS'),
@@ -28,79 +31,122 @@ class SOSRoute extends StatelessWidget {
             ),
             tabs: <Widget>[
               Tab(text: "BOUFFE"),
-              Tab(text: "SOIREE"),
-              Tab(text: "CORVEES"),
+              Tab(text: "CORVÉES"),
               Tab(
-                text: "BIEN ETRE",
+                text: "BIEN ÊTRE",
               ),
               Tab(text: "AUTRES"),
             ],
           ),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: <Widget>[
             CardColumn(
               cards: [
                 ExpandableCard(
-                  title: "Petit dej' envouté",
+                  title: "Petit dej envoûté",
+                  desc:
+                      "On passe à la boulangerie pour toi\n(payant au prix de vos courses)",
                 ),
                 ExpandableCard(
-                  title: "Crepes de marabout",
+                  title: "10 Crêpes",
+                  desc: "Garnitures classiques (3 €)",
                 ),
                 ExpandableCard(
                   title: "Plateau apéro",
+                  desc:
+                      "Saucisson, cacahuètes, chips, petit dés d'emmental (3 €)",
+                ),
+                LogoLinks(),
+                const SizedBox(
+                  width: double.infinity,
+                  height: 60,
                 ),
               ],
             ),
             CardColumn(
               cards: [
                 ExpandableCard(
-                  title: "Un tour de balai volant",
+                  title: "Vaisselle",
+                  desc: "Une éponge, du liquide vaisselle et ça part",
                 ),
                 ExpandableCard(
-                  title: "Elixir personnalisé",
-                ),
-              ],
-            ),
-            CardColumn(
-              cards: [
-                ExpandableCard(
-                  title: "Vaisselle méchant propre",
+                  title: "Ménage",
+                  desc: "Payant pour le chapito et la tiela",
                 ),
                 ExpandableCard(
-                  title: "Pressing",
+                  title: "Nettoyage du balai magique",
+                  desc: "wash, sexy possible",
+                ),
+                ExpandableCard(
+                  title: "Repassage",
+                  desc: "Pour être pimpant pour ton date de ce soir",
+                ),
+                ExpandableCard(
+                  title: "Uber eats",
+                  desc: "Encore moins bien payé que les vrai",
                 ),
                 ExpandableCard(
                   title: "Courses",
+                  desc:
+                      "Avec la spell mobile, vos courses livrées chez vous\n(payant au prix de vos courses)",
                 ),
                 ExpandableCard(
-                  title: "Aide aux devoirs",
+                  title: "Cuisine",
+                  desc:
+                      "Tu donnes ta recette, on fait les courses si besoin et on cuisine pour toi",
                 ),
-                ExpandableCard(
-                  title: "Nettoyage voiture",
-                ),
-              ],
-            ),
-            CardColumn(
-              cards: [
-                ExpandableCard(
-                  title: "Coiffeur enchanté",
-                ),
-                ExpandableCard(
-                  title: "Pack détente",
-                ),
-                ExpandableCard(
-                  title: "Chicha",
+                LogoLinks(),
+                const SizedBox(
+                  width: double.infinity,
+                  height: 60,
                 ),
               ],
             ),
             CardColumn(
               cards: [
                 ExpandableCard(
-                  title: "Tour de magie",
+                  title: "Coiffeur à domicile",
+                  desc: "Même pour les chauves",
                 ),
                 ExpandableCard(
-                  title: "Devination",
+                  title: "Massage",
+                  desc: "Par des mains de fées",
+                ),
+                ExpandableCard(
+                  title: "Manucure de sorciers",
+                  desc: "Pour des mains de fées",
+                ),
+                LogoLinks(),
+                const SizedBox(
+                  width: double.infinity,
+                  height: 60,
+                ),
+              ],
+            ),
+            CardColumn(
+              cards: [
+                ExpandableCard(
+                  title: "Taxi balai volant",
+                  desc: "Au compteur",
+                ),
+                ExpandableCard(
+                  title: "Chicha ensorcelante",
+                  desc: "Bien posé, bien calé (5 €)",
+                ),
+                ExpandableCard(
+                  title: "Pack de la voyante",
+                  desc:
+                      "Tour de magie, divination, tirage de cartes, séance d’hypnose",
+                ),
+                ExpandableCard(
+                  title: "Séance de coaching",
+                  desc: "Sport, amour ou relooking",
+                ),
+                LogoLinks(),
+                const SizedBox(
+                  width: double.infinity,
+                  height: 60,
                 ),
               ],
             ),
@@ -110,7 +156,8 @@ class SOSRoute extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const CommanderRoute()),
+              MaterialPageRoute(
+                  builder: (context) => const CommanderSOSRoute()),
             );
           },
           icon: const Icon(Icons.shopping_cart_checkout_sharp),
@@ -118,33 +165,6 @@ class SOSRoute extends StatelessWidget {
           backgroundColor: const Color(0xff1ad2d6),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      ),
-    );
-  }
-}
-
-class CardColumn extends StatelessWidget {
-  final List<ExpandableCard> cards;
-
-  const CardColumn(
-      {Key? key,
-      this.cards = const <ExpandableCard>[
-        ExpandableCard(),
-      ]})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
-      child: ListView.builder(
-        itemCount: cards.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: cards[index],
-          );
-        },
       ),
     );
   }

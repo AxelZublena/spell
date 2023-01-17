@@ -15,7 +15,7 @@ class DefisButton extends StatelessWidget {
     return const MainButton(
         text: "DEFIS",
         infoDesc:
-            'Envie de challenge ?\n\nComplete un max de défis pour remporter des lots d’un autre monde !',
+            "Envie de challenge ?\nComplète un max de défis pour remporter des lots d’un autre monde !",
         next: DefisRoute());
   }
 }
@@ -29,8 +29,58 @@ class WELButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MainButton(
         text: "WEL",
+        infoDesc: "Commande les délices du sorcier-chef et profite du WEL !",
+        next: WELRoute(
+          initIndex: 0,
+        ));
+  }
+}
+
+class WELButtonSpec1 extends StatelessWidget {
+  const WELButtonSpec1({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const MainButton(
+        text: "WEL",
         infoDesc:
-            'Viens profiter du WEL !\n\nCommande les délice du sorcier-chef ',
+            "Commande les délices du sorcier-chef et profite du WEL !\n\n18h - 5h",
+        next: WELRoute(
+          initIndex: 0,
+        ));
+  }
+}
+
+class WELButtonSpec2 extends StatelessWidget {
+  const WELButtonSpec2({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const MainButton(
+        text: "WEL",
+        infoDesc:
+            "Commande les délices du sorcier-chef et profite du WEL !\n\n8h - 22h",
+        next: WELRoute(
+          initIndex: 0,
+        ));
+  }
+}
+
+class WELButtonSpec3 extends StatelessWidget {
+  const WELButtonSpec3({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const MainButton(
+        text: "WEL",
+        infoDesc:
+            "Commande les délices du sorcier-chef et profite du WEL !\n\n8h - 16h\n18h - 00h",
         next: WELRoute(
           initIndex: 0,
         ));
@@ -47,7 +97,7 @@ class SOSButton extends StatelessWidget {
     return const MainButton(
         text: "SOS",
         infoDesc:
-            'Viens profiter du SOS !\n\nChoisis ta catégorie et nous ferons de notre mieux pour remplir ta demande',
+            'Découvre un de nos sorts favoris : le "à la rescousse".\nTu nous appelles, on fait le reste.',
         next: SOSRoute());
   }
 }
@@ -62,7 +112,7 @@ class CalendrierButton extends StatelessWidget {
     return const MainButton(
       text: "CALENDRIER",
       infoDesc:
-          'C’est la semaine des campagnes !\nPleins d’événements t’attendent !',
+          "C’est la semaine des campagnes !\nPleins d’événements envoutants t’attendent !",
       next: CalendrierRoute(),
     );
   }

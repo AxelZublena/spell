@@ -57,9 +57,9 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "images/logo-app.png"
+  image_path: "images/logo.png"
   adaptive_icon_background: "#cb5a9f"
-  adaptive_icon_foreground: "images/logo-app-foreground.png"
+  adaptive_icon_foreground: "images/logo-foreground.png"
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -83,8 +83,17 @@ flutter:
     - images/insta-logo.png
     - images/insta-logo-purple.png
     - images/yt-logo.png
-    - images/penta.png
+    - images/carte.png
     - images/date-icon.png
+    - images/wel/burger.jpg
+    - images/wel/tarti.jpg
+    - images/wel/gratin.jpg
+    - images/wel/lasagnes.jpg
+    - images/wel/poke.jpg
+    - images/wel/noix.jpeg
+    - images/wel/crumble.jpg
+    - images/wel/cookies.jpg
+    - images/wel/muffins.jpg
 
     # An image asset can refer to one or more resolution-specific "variants", see
     # https://flutter.dev/assets-and-images/#resolution-aware

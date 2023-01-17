@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spell/defis.dart';
 import 'package:spell/wel.dart';
 import 'package:spell/widgets/AppBars.dart';
+import 'package:spell/widgets/LogoLinks.dart';
 import './widgets/SecondaryButton.dart';
 import './widgets/MainButtons.dart';
 
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
       const DefisButton(),
       const SecondSecondaryRow(),
       const BigImage(),
+      const LogoLinks(),
     ];
 
     return MaterialApp(
