@@ -315,10 +315,10 @@ class DefisRoute extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                               color: const Color(0xff1198b8)),
                           child: Padding(
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                   horizontal: 20.0, vertical: 10.0),
                               child: Column(
-                                children: [
+                                children: const [
                                   Text(
                                     "Check la story du jour pour connaître le défi !",
                                     textAlign: TextAlign.justify,
