@@ -54,7 +54,7 @@ class SOSRoute extends StatelessWidget {
                 ExpandableCard(
                   title: "Plateau apéro",
                   desc:
-                      "Saucisson, cacahuètes, chips, petit dés d'emmental (3 €)",
+                      "Saucisson, cacahuètes, chips, petits dés d'emmental (3 €)",
                 ),
                 LogoLinks(),
                 SizedBox(
@@ -75,7 +75,7 @@ class SOSRoute extends StatelessWidget {
                 ),
                 ExpandableCard(
                   title: "Nettoyage du balai magique",
-                  desc: "wash, sexy possible",
+                  desc: "Car wash, sexy possible",
                 ),
                 ExpandableCard(
                   title: "Repassage",
@@ -83,7 +83,7 @@ class SOSRoute extends StatelessWidget {
                 ),
                 ExpandableCard(
                   title: "Uber eats",
-                  desc: "Encore moins bien payé que les vrai",
+                  desc: "Encore moins bien payé que les vrais",
                 ),
                 ExpandableCard(
                   title: "Courses",

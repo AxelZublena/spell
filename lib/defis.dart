@@ -113,13 +113,13 @@ class DefisRoute extends StatelessWidget {
                       ExpandableDefis(
                         title: "R8",
                         desc:
-                            "Compter le nombre de fois où le petit cheval apparait dans le film",
-                        pts: "5 pts/stickers",
+                            "Coller nos stickers dans des endroits improbables",
+                        pts: "5 pts/stks",
                       ),
                       ExpandableDefis(
                         title: "R9",
                         desc:
-                            "Coller nos stickers dans des endroits improbables",
+                            "Compter le nombre de fois où le petit cheval apparait dans le film",
                         pts: "10 pts",
                       ),
                       ExpandableDefis(

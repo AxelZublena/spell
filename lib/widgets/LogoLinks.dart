@@ -53,17 +53,16 @@ class LogoLinks extends StatelessWidget {
             child: Image.asset("images/yt-logo.png"),
           ),
           FittedBox(
-            fit: BoxFit.cover,
-            child: Text(
-              "@spell_la_liste",
-              textScaleFactor: 1.5,
-              style: TextStyle(
-                  fontFamily: "Fira Sans",
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xffe8effa),
-                  letterSpacing: 0.0),
-            ),
-          )
+              fit: BoxFit.cover,
+              child: Text(
+                "@spell_la_liste",
+                textScaleFactor: 1.3,
+                style: TextStyle(
+                    fontFamily: "Fira Sans",
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xffe8effa),
+                    letterSpacing: 0.0),
+              ))
         ],
       )),
     );

@@ -96,8 +96,8 @@ class _CalendrierState extends State<Calendrier> {
                     ExpandableCard(
                       title: "SOIREE SPELL",
                       desc:
-                          "Sorciers, Sorcières, venez passer une soirée inoubliable, venez vous ambiancer sur un son qui ferai zouker Dumbledore, venez profiter de toutes nos potions magiques en illimitées ainsi que tout nos artifices qui vous feront voyager dans un monde de magie.",
-                      date: "22h - 4h",
+                          "Sorciers, Sorcières, venez passer une soirée inoubliable, venez vous ambiancer sur un son qui ferait zouker Dumbledore, venez profiter de toutes nos potions magiques en illimitées ainsi que tous nos artifices qui vous feront voyager dans un monde de magie.",
+                      date: "21h30 - 4h",
                       address:
                           "Salle Orchidée\n6 Rue Fernand Pelloutier, 38130 Échirolles",
                     ),
@@ -118,8 +118,8 @@ class _CalendrierState extends State<Calendrier> {
                     ExpandableCard(
                       title: "MINP SPELL",
                       desc:
-                          "Une Kfête d'anniversaire comme vous en avez jamais vécu !\nSurtout pour les grands et pas pour les petits.",
-                      date: "20h - 00h",
+                          "Une Kfête d'anniversaire comme vous n'en avez jamais vécu !\nSurtout pour les grands et pas pour les petits.",
+                      date: "19h30 - 00h",
                       address:
                           "MINP, 730 Rue de la Piscine, 38402 Saint-Martin-d'Hères",
                     ),
@@ -133,7 +133,7 @@ class _CalendrierState extends State<Calendrier> {
                     ExpandableCard(
                       title: "GOUTER",
                       desc:
-                          "Viens chercher des forces après cette belle journée auprès de nos druides. Tu en aura besoin pour ce soir.",
+                          "Viens chercher des forces après cette belle journée auprès de nos druides. Tu en auras besoin pour ce soir.",
                       date: "18h - 20h",
                       address: "Campus",
                     ),
@@ -180,7 +180,7 @@ class _CalendrierState extends State<Calendrier> {
                       desc: "Brice au tournoi des sorciers\n\n"
                           "Par un heureux hasard, le roi de la glisse est de retour dans notre liste.\n"
                           "Avec l'aide de vos magiciens préférés, il a créé, ici même à grenoble, une vague infinie.\n"
-                          "Il vous invite à vous affronter entre groupes de phelmatiens pour décrocher le trophé du meilleur surfeur-gicien....",
+                          "Il vous invite à vous affronter entre groupes de phelmatiens pour décrocher le trophée du meilleur surfeur-gicien....",
                       date: "10h - 20h",
                       address: "33 Cours Jean Jaurès, 38130 Échirolles\n\n"
                           "- Ligne 25 depusi Bd Maréchal Foch\n- Tram E + C2 depuis Alsace Lo",
@@ -198,7 +198,7 @@ class _CalendrierState extends State<Calendrier> {
                     ExpandableCard(
                       title: "VOTE",
                       desc:
-                          "Qu'un seule option : La SPELL. Sinon on fait appel aux marabouts",
+                          "Qu'une seule option : La SPELL. Sinon on fait appel aux marabouts",
                       date: "8h - 5h",
                     ),
                   ];

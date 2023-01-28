@@ -63,7 +63,7 @@ class WELRoute extends StatelessWidget {
                 ExpandableImage(
                   title: "Burger Végé",
                   desc:
-                      "Vous êtes végé, démarrez ce WEL avec notre burger spécial meat free.\ncarotte, chou, mayonnnais, pomme de terre, oeuf, sel, poivre, sauce barbecue\n\nDispo à partir du : 03/02",
+                      "Vous êtes végé, démarrez ce WEL avec notre burger spécial meat free.\ncarotte, chou, mayonnaise, pomme de terre, oeuf, sel, poivre, sauce barbecue\n\nDispo à partir du : 03/02",
                   img: "images/wel/burger.jpg",
                 ),
                 ExpandableImage(
@@ -75,13 +75,13 @@ class WELRoute extends StatelessWidget {
                 ExpandableImage(
                   title: "Gratin Dauphinois",
                   desc:
-                      "Plat typique régional, amateur de patate ce plat est fait pour toi.\npatate, lait, poivre, sel, muscade, beure, crème, ail\n\nDispo à partir du : 04/02",
+                      "Plat typique régional, amateur de patate ce plat est fait pour toi.\npatate, lait, poivre, sel, muscade, beurre, crème, ail\n\nDispo à partir du : 04/02",
                   img: "images/wel/gratin.jpg",
                 ),
                 ExpandableImage(
                   title: "Lasagnes",
                   desc:
-                      "Les chefs spells ont, avec grâce et magie, revisité ce plat avec des légumes de saison.\nVégétariens et amateurs de légumes en tous genre, ce plat va vous combler.\népinard, potiron, oignon, beure, lait, farine, pâte, gruyère\n\nDispo à partir du : 05/02",
+                      "Les chefs spells ont, avec grâce et magie, revisité ce plat avec des légumes de saison.\nVégétariens et amateurs de légumes en tout genre, ce plat va vous combler.\népinard, potiron, oignon, beurre, lait, farine, pâte, gruyère\n\nDispo à partir du : 05/02",
                   img: "images/wel/lasagnes.jpg",
                 ),
                 ExpandableImage(
@@ -108,7 +108,7 @@ class WELRoute extends StatelessWidget {
                 ExpandableImage(
                   title: "Crumble",
                   desc:
-                      "Le juste mélange entre un dessert croquant et fondant.\npomme, cannelle, beure, farine, sucre",
+                      "Le juste mélange entre un dessert croquant et fondant.\npomme, cannelle, beurre, farine, sucre",
                   img: "images/wel/crumble.jpg",
                 ),
                 ExpandableImage(
