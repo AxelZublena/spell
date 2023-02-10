@@ -43,18 +43,12 @@ class CommanderRoute extends StatelessWidget {
               ),
               const ExpandableCard(
                 title: "VENDREDI",
-                desc:
-                    "18h - 5h\n\nzone 1 : 06 84 56 81 51\n\nZone 2 : 06 30 90 14 67\n\nZone 3 : 07 83 74 63 77",
               ),
               const ExpandableCard(
                 title: "SAMEDI",
-                desc:
-                    "8h - 22h\n\nzone 1 : 06 84 56 81 51\n\nZone 2 : 06 30 90 14 67\n\nZone 3 : 07 83 74 63 77",
               ),
               const ExpandableCard(
                 title: "DIMANCHE",
-                desc:
-                    "8h - 16h\n\n18h - 00h\n\nzone 1 : 06 84 56 81 51\n\nZone 2 : 06 30 90 14 67\n\nZone 3 : 07 83 74 63 77",
               ),
               const SizedBox(
                 height: 15,
